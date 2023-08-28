@@ -1,0 +1,57 @@
+:root {
+  --width: 100%;
+  --play: running;
+  --direction: normal;
+  --duration: 50s;
+  --delay: 0s;
+  --iteration-count: infinite;
+  --min-width: 100%;
+  --text-color: #121212;
+  --text-color-light: #FFFFFF;
+  --bg-color-marquee: #5551FF;
+}
+
+.marquee {
+  display: flex;
+  padding: 12px 0;
+  width: 100%;
+  color: var(--text-color-light);
+  background-color: var(--bg-color-marquee);
+  overflow: hidden;
+}
+
+.marquee--vertical {
+  transform: rotate(90deg);
+}
+
+.marquee__content {
+  flex: 0 0 auto;
+  min-width: var(--min-width);
+  z-index: 1;
+  display: flex;
+  gap: 64px;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+}
+
+.marquee:hover > .marquee__content {
+  animation-play-state: paused;
+}
+
+.marquee:active > .marquee__content {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
