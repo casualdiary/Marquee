@@ -24,6 +24,10 @@
   transform: rotate(90deg);
 }
 
+.marquee--diagonal {
+  transform: rotate(45deg);
+}
+
 .marquee__content {
   flex: 0 0 auto;
   min-width: var(--min-width);
