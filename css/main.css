@@ -2,22 +2,25 @@
   --width: 100%;
   --play: running;
   --direction: normal;
-  --duration: 50s;
+  --duration: 20s;
   --delay: 0s;
   --iteration-count: infinite;
   --min-width: 100%;
-}
-
-section {
-  position: relative;
-  width: 100%;
-}
-
-ul {
-  list-style: none;
+  --text-color: #121212;
+  --text-color-light: #FFFFFF;
+  --bg-color-marquee: #5551FF;
 }
 
 .marquee {
+  display: flex;
+  padding: 12px 0;
+  width: 100%;
+  color: var(--text-color-light);
+  background-color: var(--bg-color-marquee);
+  overflow: hidden;
+}
+
+.marquee__content {
   flex: 0 0 auto;
   min-width: var(--min-width);
   z-index: 1;
@@ -30,7 +33,7 @@ ul {
   animation-direction: var(--direction);
 }
 
-.marquee:hover {
+.marquee__content:hover {
   animation-play-state: paused;
 }
 

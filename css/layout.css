@@ -1,0 +1,42 @@
+:root {
+  --bg-color: #FFC700;
+  --bg-color-light: #FFFFFF;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+}
+
+section {
+  position: relative;
+  margin: 0 auto 32px;
+  padding: 24px;
+  max-width: 900px;
+}
+
+section > h1 {
+  margin-bottom: 16px;
+}
+
+.section__box {
+  background-color: var(--bg-color-light);
+  width: 100%;
+  min-height: 200px;
+  border: 5px solid #121212;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
