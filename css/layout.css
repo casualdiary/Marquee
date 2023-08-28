@@ -1,6 +1,7 @@
 :root {
   --bg-color: #FFC700;
   --bg-color-light: #FFFFFF;
+  --text-color-light: #FFFFFF;
 }
 
 body {
@@ -39,4 +40,9 @@ ul {
 .flex-center {
   align-items: center;
   justify-content: center;
+}
+
+a {
+  color: var(--text-color-light);
+  text-decoration:  none;
 }

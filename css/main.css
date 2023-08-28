@@ -2,7 +2,7 @@
   --width: 100%;
   --play: running;
   --direction: normal;
-  --duration: 20s;
+  --duration: 50s;
   --delay: 0s;
   --iteration-count: infinite;
   --min-width: 100%;
@@ -20,11 +20,16 @@
   overflow: hidden;
 }
 
+.marquee--vertical {
+  transform: rotate(90deg);
+}
+
 .marquee__content {
   flex: 0 0 auto;
   min-width: var(--min-width);
   z-index: 1;
   display: flex;
+  gap: 64px;
   flex-direction: row;
   align-items: center;
   animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
@@ -33,12 +38,12 @@
   animation-direction: var(--direction);
 }
 
-.marquee__content:hover {
+.marquee:hover > .marquee__content {
   animation-play-state: paused;
 }
 
-.marquee__content {
-  display: flex;
+.marquee:active > .marquee__content {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
