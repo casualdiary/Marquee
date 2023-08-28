@@ -1,0 +1,23 @@
+:root {
+  --width: 100%;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.marquee {
+  position: relative;
+  display: flex;
+  width: var(--width);
+  overflow-x: hidden;
+}
+
+.marquee__content {
+  display: flex;
+}
