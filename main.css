@@ -1,5 +1,11 @@
 :root {
   --width: 100%;
+  --play: running;
+  --direction: normal;
+  --duration: 50s;
+  --delay: 0s;
+  --iteration-count: infinite;
+  --min-width: 100%;
 }
 
 section {
@@ -12,12 +18,32 @@ ul {
 }
 
 .marquee {
-  position: relative;
+  flex: 0 0 auto;
+  min-width: var(--min-width);
+  z-index: 1;
   display: flex;
-  width: var(--width);
-  overflow-x: hidden;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+}
+
+.marquee:hover {
+  animation-play-state: paused;
 }
 
 .marquee__content {
   display: flex;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
